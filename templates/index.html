@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii Art Web</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ascii-Art-Web</h1>
+        <p>Create your ASCII art using different banners!</p>
+    </header>
+
+    <form action="/ascii-art" method="POST">
+        <div>
+            <label for="text">Enter your text:</label>
+            <input type="text" id="text" name="text" required placeholder="Enter text">
+        </div>
+    
+        <div>
+            <label for="banner">Choose a banner:</label>
+            <input type="radio" id="shadow" name="banner" value="shadow" required>
+            <label for="shadow">Shadow</label>
+            <input type="radio" id="standard" name="banner" value="standard">
+            <label for="standard">Standard</label>
+            <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+            <label for="thinkertoy">Thinkertoy</label>
+        </div>
+    
+        <div>
+            <button type="submit">Generate ASCII Art</button>
+        </div>
+    </form>
+    
+    {{if .AsciiArt}}
+        <div class="ascii-result">
+            <h2>Generated ASCII Art:</h2>
+            <pre>{{.AsciiArt}}</pre>
+        </div>
+    {{end}}
+
+    <footer>
+        <p>Ascii Art Web App - Created by Socrates</p>
+    </footer>
+</body>
+</html>
