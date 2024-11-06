@@ -4,7 +4,9 @@
 ASCII Art Web is a web-based application that allows users to convert text into ASCII art using various banner styles. Users can enter text, choose a banner style, and see the generated ASCII art displayed on the webpage. This project builds upon a command-line ASCII art generator by adding an HTTP server and a web GUI.
 
 ## Authors
-- [Konstantinos Petroutsos, Christos Markos, Sokratis Aggelakopoulos]
+- Konstantinos Petroutsos 
+- Christos Markos 
+- Sokratis Aggelakopoulos
 
 ## Usage
 
