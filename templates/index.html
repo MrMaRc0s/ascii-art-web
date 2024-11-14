@@ -107,11 +107,6 @@
             const color = document.getElementById('color').value;
             const asciiOutput = document.getElementById('ascii-output');
 
-            if (!text) {
-                alert("Please enter some text.");
-                return;
-            }
-
             try {
                 const response = await fetch('/ascii-art', {
                     method: 'POST',
