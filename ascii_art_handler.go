@@ -28,6 +28,20 @@ func asciiArtHandler(w http.ResponseWriter, r *http.Request) {
 
 	inputText := r.FormValue("text")
 	banner := r.FormValue("banner")
+	alignment := r.FormValue("alignment")
+	color := r.FormValue("color")
+
+	// Check if the alignment is valid
+	if alignment != "left" && alignment != "center" && alignment != "right" {
+		http.Error(w, "Bad Request - Invalid alignment option", http.StatusBadRequest)
+		return
+	}
+
+	// Check if the color is valid
+	if color != "#ffffff" && color != "#ff0000" && color != "#00ff00" && color != "#0000ff" && color != "#ffff00" && color != "#ff00ff" && color != "#00ffff" && color != "#000000" {
+		http.Error(w, "Bad Request - Invalid alignment option", http.StatusBadRequest)
+		return
+	}
 
 	// Check if the provided banner is valid
 	if banner != "standard" && banner != "shadow" && banner != "thinkertoy" {
