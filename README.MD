@@ -18,19 +18,18 @@ ASCII Art Web is a web-based application that allows users to convert text into 
 1. **Clone the Repository** or set up your project directory:
     ```
     ascii-art-web/
-    ├── main.go
-    ├── templates/
-    │   ├── index.html
-    │   └── result.html
     ├── banners/
     │    ├── shadow.txt
     │    ├── standard.txt
     │    └── thinkertoy.txt
-    ├── ascii_printer.go
+    ├── templates/
+    │   └── index.html
     ├── ascii_art_handler.go
+    ├── ascii_printer.go
     ├── go.mod
     ├── load_banner.go
     ├── main_page.go
+    ├── main.go
     ` ``
 
 2. **Navigate to the Project Directory**:
@@ -51,6 +50,8 @@ ASCII Art Web is a web-based application that allows users to convert text into 
 5. **Use the Web Interface**:
    - Enter your text.
    - Select a banner style.
+   - Select an alignment.
+   - Select a color.
    - Click "Generate ASCII Art" to display the ASCII art on the page.
 
 6. **Stop the Server** by pressing `Ctrl+C` in the terminal.
