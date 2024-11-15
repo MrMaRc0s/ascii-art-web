@@ -108,12 +108,6 @@
             const alignment = document.querySelector('input[name="alignment"]:checked').value;
             const color = document.getElementById('color').value;
 
-            // Check if input is valid
-            if (!text) {
-                alert("Please enter some text.");
-                return;
-            }
-
             try {
                 // send data to the server
                 const formData = new URLSearchParams();
