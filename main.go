@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"os"
 )
 
 // Custom handler that wraps ServeMux to handle 404 responses
@@ -41,10 +40,12 @@ func main() {
 	// Wrap the mux in our customMux to handle 404 errors
 	wrappedMux := &customMux{mux: mux}
 
-	fmt.Println("Server is running on http://localhost:8080")
+	port := 8080
+	fmt.Print("Server is running on http://localhost:8080 ")
 	err := http.ListenAndServe(":8080", wrappedMux)
-	if err != nil {
-		fmt.Println("Error starting server:", err)
-		os.Exit(1)
+	for err != nil {
+		port++
+		fmt.Printf("\rServer is running on http://localhost:%v ", port)
+		err = http.ListenAndServe(fmt.Sprintf(":%d", port), wrappedMux)
 	}
 }
